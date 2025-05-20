@@ -45,7 +45,7 @@ export default function Hero() {
         >
           <div className="relative">
             <img
-              src="/placeholder.svg?height=600&width=600"
+              src="/vamshi.jpeg"
               alt="Vamshi Toramamidi"
               width={600}
               height={600}
