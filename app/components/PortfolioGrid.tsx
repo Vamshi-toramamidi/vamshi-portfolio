@@ -24,7 +24,7 @@ const projects: Project[] = [
     title: "Movie Recommendation Website",
     description:
       "Engineered a scalable full-stack web application using React.js, Node.js, and Firebase, focusing on clean architecture and modular component design to ensure reusability and separation of concerns.",
-    imageUrl: "/placeholder.svg?height=600&width=800",
+    imageUrl: "/placeholder.svg",
     category: "Web Development",
     details: [
       "Optimized frontend performance by implementing code splitting, lazy loading, cookies and efficient state updates, reducing render time and improving load speed.",
@@ -50,7 +50,7 @@ const projects: Project[] = [
     title: "Food Forecasting with Tableau",
     description:
       "Developed a comprehensive food demand forecasting system using Tableau to predict inventory needs and optimize supply chain operations.",
-    imageUrl: "/placeholder.svg?height=600&width=800",
+    imageUrl: "/placeholder.svg",
     category: "Data Visualization",
     details: [
       "Analyzed historical sales data to identify seasonal patterns and trends in food consumption.",
@@ -65,7 +65,7 @@ const projects: Project[] = [
     title: "UAV Audio Detection System",
     description:
       "Integrated YAMnet into Unmanned Aerial Vehicle's stereo-vision system for audio detection and classification.",
-    imageUrl: "/placeholder.svg?height=800&width=600",
+    imageUrl: "/placeholder.svg",
     category: "Machine Learning",
     details: [
       "Preprocessed audio samples by converting .mp3 files to .WAV format and extracting features using mel spectrograms.",
@@ -94,7 +94,7 @@ const projects: Project[] = [
     title: "MEAN - Medium Website Replica",
     description:
       "Collaborated with a team of five to create a functional replica of the Medium publishing platform, named MEAN, with article publishing and user interaction features.",
-    imageUrl: "/placeholder.svg?height=800&width=600",
+    imageUrl: "/placeholder.svg",
     category: "Web Development",
     details: [
       "Implemented user authentication, article creation, editing, and publishing functionality.",
