@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -50,23 +49,16 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="container mx-auto max-w-5xl">
-        <motion.h2
-          className="text-4xl font-bold mb-8 text-center text-gray-900"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+      <div className="mx-auto max-w-5xl">
+        <h2 className="animate-fade-up text-3xl sm:text-4xl font-bold mb-8 text-center text-foreground">
           Get in Touch
-        </motion.h2>
+        </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <motion.div
-            className="bg-white p-8 rounded-2xl shadow-lg"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+          <div
+            className="animate-fade-up bg-card text-card-foreground border border-border p-6 sm:p-8 rounded-2xl shadow-lg"
+            style={{ animationDelay: "0.2s" }}
           >
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -118,13 +110,11 @@ export default function Contact() {
                 </Button>
               </form>
             </Form>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="bg-white p-8 rounded-2xl shadow-lg"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+          <div
+            className="animate-fade-up bg-card text-card-foreground border border-border p-6 sm:p-8 rounded-2xl shadow-lg"
+            style={{ animationDelay: "0.3s" }}
           >
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
             <div className="space-y-4">
@@ -146,7 +136,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">Phone</p>
+                  <p className="text-sm text-muted-foreground">Phone</p>
                   <p className="font-medium">+1 (206) 294-2609</p>
                 </div>
               </div>
@@ -169,7 +159,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">Email</p>
+                  <p className="text-sm text-muted-foreground">Email</p>
                   <p className="font-medium">toramamidivamshi@gmail.com</p>
                 </div>
               </div>
@@ -198,7 +188,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">Location</p>
+                  <p className="text-sm text-muted-foreground">Location</p>
                   <p className="font-medium">Seattle, Washington 98122</p>
                 </div>
               </div>
@@ -243,7 +233,7 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

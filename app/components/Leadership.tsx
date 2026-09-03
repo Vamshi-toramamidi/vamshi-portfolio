@@ -1,31 +1,21 @@
-"use client"
-
-import { motion } from "framer-motion"
 import { Users } from "lucide-react"
 
 export default function Leadership() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="container mx-auto">
-        <motion.h2
-          className="text-4xl font-bold mb-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-section">
+      <div className="mx-auto max-w-7xl">
+        <h2 className="animate-fade-up text-3xl sm:text-4xl font-bold mb-12 text-center text-foreground">
           Leadership & Extracurricular
-        </motion.h2>
-        <motion.div
-          className="bg-white p-6 rounded-lg shadow-md"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+        </h2>
+        <div
+          className="animate-fade-up bg-card text-card-foreground border border-border p-5 sm:p-6 rounded-lg shadow-md"
+          style={{ animationDelay: "0.2s" }}
         >
-          <div className="flex items-start gap-4">
-            <div className="bg-primary/20 p-3 rounded-full">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+            <div className="w-fit shrink-0 rounded-full bg-primary/20 p-3">
               <Users className="h-6 w-6 text-primary" />
             </div>
-            <div>
+            <div className="min-w-0 flex-1">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                 <h3 className="text-xl font-bold">Tech Lead and Core Member</h3>
                 <p className="text-muted-foreground">Oct 2020 – March 2024</p>
@@ -48,7 +38,7 @@ export default function Leadership() {
               </ul>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
