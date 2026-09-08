@@ -1,4 +1,4 @@
-import { Briefcase } from "lucide-react"
+import { Briefcase, ExternalLink } from "lucide-react"
 import ExperienceVideo from "./ExperienceVideo"
 
 type Experience = {
@@ -7,6 +7,11 @@ type Experience = {
   location: string
   period: string
   responsibilities: string[]
+  /** Public deployment of the work built in this role. */
+  liveUrl?: {
+    href: string
+    label: string
+  }
   /** Field-test footage, expanded and played when the entry scrolls into view. */
   demo?: {
     src: string
@@ -29,6 +34,10 @@ export default function Experience() {
         "Engineered the guardrail and evaluation layer, combining Unicode sanitization, Luhn-validated PII redaction, OpenAI moderation executed concurrently on a thread pool behind LLM latency, and a model-invoked decline tool for off-topic and prompt-probing input, alongside a 38-query graded relevance harness with CI-enforced metric floors and 22 pytest cases  making relevance regressions blocking rather than anecdotal, at zero added user-facing latency.",
         "Integrated and deployed the end-to-end system FastAPI backend, Next.js/React frontend, Neon Postgres, Redis, and Cloudflare R2 with concurrent dependency and index warmup at startup that removed multi-second cold-start latency, off-request-path analytics writes, and an environment-flag rollback to the legacy ranker requiring no redeploy; containerized with Docker and shipped to Railway and Vercel.",
       ],
+      liveUrl: {
+        href: "https://mayuribot.toramamidivamshi.com",
+        label: "Try MayuriBot live",
+      },
     },
     {
       position: "Data Engineer Intern",
@@ -89,6 +98,18 @@ export default function Experience() {
                     <p className="text-muted-foreground">{exp.location}</p>
                     <p className="text-muted-foreground">{exp.period}</p>
                   </div>
+                  {exp.liveUrl && (
+                    <a
+                      href={exp.liveUrl.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3.5 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                    >
+                      {exp.liveUrl.label}
+                      <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                      <span className="sr-only">(opens in a new tab)</span>
+                    </a>
+                  )}
                   <ul className="mt-4 space-y-2">
                     {exp.responsibilities.map((resp, respIndex) => (
                       <li key={respIndex} className="flex items-start">
