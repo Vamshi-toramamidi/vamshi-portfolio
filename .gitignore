@@ -25,3 +25,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# wrangler
+.wrangler
+
+# original media, too large to deploy (see public/demos for the web encode)
+/media-source

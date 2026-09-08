@@ -3,6 +3,7 @@ import Education from "./components/Education"
 import Skills from "./components/Skills"
 import Experience from "./components/Experience"
 import PortfolioGrid from "./components/PortfolioGrid"
+import Certifications from "./components/Certifications"
 import Leadership from "./components/Leadership"
 import Contact from "./components/Contact"
 
@@ -16,6 +17,7 @@ export default function Home() {
       </div>
       <Skills />
       <Education />
+      <Certifications />
       <Leadership />
       <Contact />
     </>

@@ -3,10 +3,10 @@ export default function Skills() {
   const skillCategories = [
     {
       category: "Languages",
-      skills: ["Python", "Java", "C++", "R", "SQL", "HTML/CSS"],
+      skills: ["Python", "Java", "SQL", "HTML/CSS"],
     },
     {
-      category: "Libraries",
+      category: "AIML Libraries",
       skills: [
         "Pandas",
         "Numpy",
@@ -20,7 +20,12 @@ export default function Skills() {
         "NLTK",
         "Pydub",
         "Librosa",
+        "Pydantic",
       ],
+    },
+    {
+      category: "AIML Frameworks",
+      skills: ["Google Adk", "Langchain", "Hugging Face Transformers", "Langgraph", "Langsmith", "LlamaIndex", "Vercel AISDK"],
     },
     {
       category: "Data Visualization",
@@ -28,7 +33,7 @@ export default function Skills() {
     },
     {
       category: "Developer Tools",
-      skills: ["VS Code", "Eclipse", "Google Cloud Platform", "Docker", "Kubernetes", "Spark", "Arduino"],
+      skills: ["VS Code", "Github", "Google Cloud Platform", "Docker", "Kubernetes"],
     },
   ]
 
