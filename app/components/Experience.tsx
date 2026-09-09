@@ -36,7 +36,7 @@ export default function Experience() {
       ],
       liveUrl: {
         href: "https://mayuribot.toramamidivamshi.com",
-        label: "Try MayuriBot live",
+        label: "Try MayuriBot live - Beta Version",
       },
     },
     {
@@ -54,7 +54,7 @@ export default function Experience() {
       position: "Machine Learning Research Intern",
       company: "Research Centre Imarat (RCI), Defense Research and Development Organization (DRDO)",
       location: "Telangana, India",
-      period: "June 2023 – Aug 2023",
+      period: "May 2023 – July 2023",
       responsibilities: [
         "Integrated an external ADC and SEN-14262 audio board into a UAV stereo-vision system, designing the complete microphone-to-inference signal path and bringing acoustic sensing onto a platform that previously supported vision only.",
         "Specified and validated the analog front end and digitization stage, covering gain staging, anti-aliasing ahead of the ADC, quantization and dynamic range budgeting, and SNR under continuous propeller noise and airframe vibration.",
