@@ -43,7 +43,7 @@ export default function Experience() {
       position: "Data Engineer Intern",
       company: "Reinvision Labs Pvt. Ltd.",
       location: "Telangana, India",
-      period: "May 2024 – Aug 2024",
+      period: "May 2022 – Aug 2024",
       responsibilities: [
         "Extracted ERP data (Customers, AR, GL) from Oracle EBS using SQL queries based on company-defined criteria, optimizing query performance, resulting in 99% data accuracy during migration.",
         "Preprocessed and formatted extracted data into FBDI format by automating scripts for date adjustments, reducing manual effort by 30% and ensuring data readiness.",
