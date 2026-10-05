@@ -1,5 +1,7 @@
 import { Briefcase, ExternalLink } from "lucide-react"
 import ExperienceVideo from "./ExperienceVideo"
+import ExperiencePrototype from "./ExperiencePrototype"
+import ExperienceEvolution from "./ExperienceEvolution"
 
 type Experience = {
   position: string
@@ -19,6 +21,23 @@ type Experience = {
     label: string
     caption: string
   }
+  /** Design iterations shown as a step-by-step progression. */
+  evolution?: {
+    label: string
+    summary: string[]
+    stages: {
+      src: string
+      thumb: string
+      title: string
+      caption: string
+    }[]
+  }
+  /** Interactive design prototype, embedded on demand. */
+  prototype?: {
+    href: string
+    label: string
+    caption: string
+  }
 }
 
 export default function Experience() {
@@ -29,14 +48,50 @@ export default function Experience() {
       location: "Seattle, Washington",
       period: "Feb 2026 – June 2026",
       responsibilities: [
-        "Architected a concept-based catalog search engine in Python, replacing a Postgres ts_rank/trigram SQL ranker with an intent model that resolves transliterated spelling variants to canonical concepts and maps each to a product kind and store department, scored by a 13-feature additive ranking function over an in-memory index of 4,000+ SKUs  raising Precision@1 from 0.61 to 1.00 and NDCG@5 from 0.63 to 1.00 on a 38-query graded benchmark while cutting query latency from ~70 ms to under 1 ms.",
-        "Built the LLM-powered store assistant on the OpenAI API (GPT-4.1-nano) using strict JSON-schema function calling over three tools, streamed to the client as Server-Sent Events from FastAPI with Redis-backed sessions and tiktoken token-budget trimming grounding every answer in retrieved catalog rows and eliminating hallucinated aisle directions by emitting floor-plan links from system-held zone codes withheld from the model.",
-        "Engineered the guardrail and evaluation layer, combining Unicode sanitization, Luhn-validated PII redaction, OpenAI moderation executed concurrently on a thread pool behind LLM latency, and a model-invoked decline tool for off-topic and prompt-probing input, alongside a 38-query graded relevance harness with CI-enforced metric floors and 22 pytest cases  making relevance regressions blocking rather than anecdotal, at zero added user-facing latency.",
-        "Integrated and deployed the end-to-end system FastAPI backend, Next.js/React frontend, Neon Postgres, Redis, and Cloudflare R2 with concurrent dependency and index warmup at startup that removed multi-second cold-start latency, off-request-path analytics writes, and an environment-flag rollback to the legacy ranker requiring no redeploy; containerized with Docker and shipped to Railway and Vercel.",
+        "Pitched an AI shopping assistant to the owners, vice president, and stakeholders as a way to keep pace with competitors, and got the go-ahead to build it.",
+        "Worked closely with stakeholders and employees to gather customer FAQs, product knowledge, and the layout of every aisle and bay, then turned it into a mapped floor plan and a technical plan for the system.",
+        "Built a Python search engine that understands transliterated spellings and maps each query to the right product and department, replacing the old SQL ranker: top-result accuracy rose from 61% to 100% on a 38-query benchmark, and searches dropped from ~70 ms to under 1 ms.",
+        "Built the chat assistant on GPT-4.1-nano with function calling and streamed responses from FastAPI, grounding every answer in real catalog data. Aisle directions come from the floor-plan map, not the model, so it never invents a location.",
+        "Added safety and quality checks: PII redaction, content moderation, polite refusal of off-topic questions, and automated relevance tests in CI so search quality can't quietly regress, all without slowing responses.",
+        "Shipped the full system (FastAPI, Next.js/React, Postgres, Redis, Docker) with fast cold starts and a one-switch rollback to the old search that needs no redeploy.",
+        "Kept it easy and cheap to run for a store without a technical team: simple for non-engineers to update, and hosted entirely on free tiers (Neon Postgres, Railway, 30 MB Redis, Vercel).",
       ],
       liveUrl: {
         href: "https://mayuribot.toramamidivamshi.com",
         label: "Try MayuriBot live - Beta Version",
+      },
+      prototype: {
+        href: "https://www.figma.com/proto/FuNV82kHWQonSqYJ7bRR6k/AI-Chatbot---Mayuri?node-id=101-997&p=f&t=OcmyrHK2uuKcivQp-1&scaling=scale-down&content-scaling=fixed&page-id=101%3A996",
+        label: "Stakeholder wireframes",
+        caption:
+          "Interactive wireframes presented to the store owners, chairman, and stakeholders before development.",
+      },
+      evolution: {
+        label: "Store floor plan: sketch to system",
+        summary: [
+          "The floor plan is what makes the assistant's aisle directions trustworthy. Every product answer links to a numbered shelf zone on this map, so customers are sent to where an item actually sits instead of wherever a language model guesses it might be.",
+          "We built it from the ground up: visiting the store to walk each aisle and record shelf by shelf what was stocked, talking with employees about where products really live and how customers ask for them, and reviewing each draft with the owners, chairman, and stakeholders until the layout matched the floor.",
+        ],
+        stages: [
+          {
+            src: "/demos/mayuri/floorplan-1-rough-sketch.jpg",
+            thumb: "/demos/mayuri/floorplan-1-rough-sketch-thumb.jpg",
+            title: "Rough sketch",
+            caption: "First site walkthrough: core aisles, freezers, and counters.",
+          },
+          {
+            src: "/demos/mayuri/floorplan-2-detailed-sketch.jpg",
+            thumb: "/demos/mayuri/floorplan-2-detailed-sketch-thumb.jpg",
+            title: "Detailed sketch",
+            caption: "Every department mapped after talks with employees.",
+          },
+          {
+            src: "/demos/mayuri/floorplan-3-digital.jpg",
+            thumb: "/demos/mayuri/floorplan-3-digital-thumb.jpg",
+            title: "Digital floor plan",
+            caption: "Numbered shelf zones, reviewed with stakeholders.",
+          },
+        ],
       },
     },
     {
@@ -118,6 +173,8 @@ export default function Experience() {
                       </li>
                     ))}
                   </ul>
+                  {exp.evolution && <ExperienceEvolution {...exp.evolution} />}
+                  {exp.prototype && <ExperiencePrototype {...exp.prototype} />}
                   {exp.demo && <ExperienceVideo {...exp.demo} />}
                 </div>
               </div>

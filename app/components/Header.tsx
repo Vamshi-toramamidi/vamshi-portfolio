@@ -8,6 +8,7 @@ import { Bars3Icon, MoonIcon, SunIcon, XMarkIcon } from "@heroicons/react/24/out
 const NAV_LINKS = [
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
+  { href: "#apps", label: "Apps" },
   { href: "#skills", label: "Skills" },
   { href: "#education", label: "Education" },
   { href: "#certifications", label: "Certifications" },

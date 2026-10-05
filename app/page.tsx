@@ -2,6 +2,7 @@ import Hero from "./components/Hero"
 import Education from "./components/Education"
 import Skills from "./components/Skills"
 import Experience from "./components/Experience"
+import Apps from "./components/Apps"
 import PortfolioGrid from "./components/PortfolioGrid"
 import Certifications from "./components/Certifications"
 import Leadership from "./components/Leadership"
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Hero />
       <Experience />
+      <Apps />
       <div id="projects">
         <PortfolioGrid />
       </div>

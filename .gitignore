@@ -30,3 +30,6 @@ next-env.d.ts
 
 # original media, too large to deploy (see public/demos for the web encode)
 /media-source
+
+# macOS
+.DS_Store
